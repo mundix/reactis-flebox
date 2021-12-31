@@ -21,7 +21,7 @@ export const ChatApp = () => {
 
   useEffect(() => {
     getImageFromApi();
-  }, [getImageFromApi]);
+  }, []);
 
   const handleGetImageFromState = (arrImages) => {
     return arrImages.map((image) => {
@@ -36,30 +36,36 @@ export const ChatApp = () => {
       <div className="container">
         <div className="row">
           <div className="col-4 chat-rooms">
-            <div className="room d-flex align-items-center my-2">
-              <div
-                className="col-3"
-                style={{
-                  minHeight: "50px",
-                  height: "auto",
-                  backgroundImage:
-                    "url(https://as01.epimg.net/meristation/imagenes/2021/09/25/reportajes/1632573368_219433_1632642376_noticia_normal_recorte1.jpg)",
-                  backgroundRepeat: "no-repeat",
-                  backgroundSize: "cover",
-                }}></div>
-              <div className="col-9 d-flex align-items-center justify-content-between">
-                <div className="flex-column justify-content-center align-items-center p-1">
-                  <p className="m-0">Jamal Fabian</p>
-                  <small>15/55/2038</small>
+            {
+              images && (images.map(image => (
+                <div className="room d-flex align-items-center my-2">
+                  <div
+                    className="col-3"
+                    style={{
+                      minHeight: "50px",
+                      height: "auto",
+                      backgroundImage:
+                        `url(${image})`,
+                      backgroundRepeat: "no-repeat",
+                      backgroundSize: "cover",
+                    }}></div>
+                  <div className="col-9 d-flex align-items-center justify-content-between">
+                    <div className="flex-column justify-content-center align-items-center p-1">
+                      <p className="m-0">Jamal Fabian</p>
+                      <small>15/55/2038</small>
+                    </div>
+                    <div className="justify-content-center align-items-center mx-2">
+                      <span className="badge rounded-pill bg-primary ">
+                        99
+                        <i className="bi bi-bar-chart" style={{ fontSize: 10 }}></i>
+                      </span>
+                    </div>
+                  </div>
                 </div>
-                <div className="justify-content-center align-items-center mx-2">
-                  <span className="badge rounded-pill bg-primary ">
-                    99
-                    <i className="bi bi-bar-chart" style={{ fontSize: 10 }}></i>
-                  </span>
-                </div>
-              </div>
-            </div>
+              ))
+              )
+            }
+
           </div>
         </div>
       </div>
