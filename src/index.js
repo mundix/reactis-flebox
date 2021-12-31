@@ -1,9 +1,10 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
-import { FlexApp } from './components/flex6/FlexApp';
+import { ChatApp } from './ChatApp';
+// import { FlexApp } from './components/flex6/FlexApp';
 
 ReactDOM.render(
-    <FlexApp />,
+    <ChatApp  />,
   document.getElementById('root')
 );
 

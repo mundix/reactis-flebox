@@ -1,0 +1,10 @@
+/* @import '~@fortawesome/fontawesome-free/scss/fontawesome'; */
+
+.chat-rooms {
+   background-color: tan;
+   min-height: 450px;
+}
+
+.room {
+   background-color: thistle;
+}
