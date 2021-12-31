@@ -1,10 +1,20 @@
 /* @import '~@fortawesome/fontawesome-free/scss/fontawesome'; */
 
 .chat-rooms {
-   background-color: tan;
+   background-color: gray;
    min-height: 450px;
 }
 
 .room {
-   background-color: thistle;
+   background-color: rgb(126, 216, 204, 0.5);
+   border-radius: 5px;
+   color: white;
+}
+
+.room  p{
+   font-size: 12px;
+}
+.room  small{
+   font-size: 10px;
+   font-style: italic;
 }

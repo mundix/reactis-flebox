@@ -41,13 +41,18 @@ export const ChatApp = () => {
          <div className="container">
             <div className="row">
                <div className="col-4 chat-rooms">
-                  {
-                     images.length && (images.map(image => {
-                        <div className="room d-flex">
-                           <div className='col-3 d-flex justify-content-center align-items-center'>
+                        <div className="room d-flex my-2 ">
+                           <div className='col-3 d-flex justify-content-center align-items-center' 
+                              style={{
+                                 height:'auto', 
+                                 backgroundImage: 'url(https://as01.epimg.net/meristation/imagenes/2021/09/25/reportajes/1632573368_219433_1632642376_noticia_normal_recorte1.jpg)',
+                                 backgroundRepeat: 'no-repeat',
+                                 backgroundSize: 'cover'
+                              }}
+                              >
 
                            </div>
-                           <div className='d-flex flex-column justify-content-center align-items-center'>
+                           <div className='d-flex flex-column justify-content-center align-items-center p-1'>
                               <p className='m-0'>Jamal Fabian</p>
                               <small>15/55/2038</small>
                            </div>
@@ -58,10 +63,6 @@ export const ChatApp = () => {
                            </div>
 
                         </div>
-                     })
-                     )
-                  }
-
                </div>
             </div>
          </div>
