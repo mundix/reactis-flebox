@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from "react";
+import React, { useCallback, useEffect, useState } from "react";
 import "./ChatApp.css";
 import axios from "axios";
 
@@ -8,28 +8,28 @@ const url = `https://api.giphy.com/v1/gifs/trending?api_key=${apiKey}&limit=10`;
 export const ChatApp = () => {
   const [images, setImages] = useState([]);
 
-  useEffect(() => {
-    getImageFromApi();
-  }, []);
-
-  const getImageFromApi = async () => {
+  const getImageFromApi = useCallback(async () => {
     console.log("paso 1");
     await axios.get(url).then((resp) => {
       setImages(handleGetImageFromState(resp.data.data));
       // Aqui tampoco esta imprimiendo.
-      console.log(images);
     });
     //Aqui no esta imprimiendo lo que guarda con el setImage
     //Pero en el React Component del inspector estan asignado los states de images
     console.log("Paso 2");
-    console.log(images);
-  };
+  }, []);
+
+  useEffect(() => {
+    getImageFromApi();
+  }, [getImageFromApi]);
 
   const handleGetImageFromState = (arrImages) => {
     return arrImages.map((image) => {
       return image.images.original.url;
     });
   };
+
+  console.log(images);
 
   return (
     <>
