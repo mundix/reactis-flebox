@@ -10,9 +10,9 @@ export const ChatApp = () => {
 
   useEffect(() => {
     // getImageFromApi();
-    console.log(images)
+    // console.log(images)
+    console.log("Llego papa:", images);
   }, [images]);
-
 
   return (
     <>
