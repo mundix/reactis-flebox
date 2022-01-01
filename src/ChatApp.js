@@ -11,6 +11,10 @@ export const ChatApp = () => {
   const {images, loading} = useGiphy();
   const { collection } = useFaker(images);
 
+  const handleRoomClicked = (uuid) => {
+    console.log( uuid);
+  }
+
   // useEffect(() => {
   //   console.log("Lllego la coleccion:",collection);
   // }, [collection])
@@ -26,7 +30,7 @@ export const ChatApp = () => {
             {
               !loading && collection.length && 
                 (collection.map((user, index) => 
-                    <RoomItem key={index} user={user} index={index} />
+                    <RoomItem key={index} user={user} index={index} handleRoomClicked={handleRoomClicked}/>
                   )) 
             }
 
