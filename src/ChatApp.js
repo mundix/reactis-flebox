@@ -1,4 +1,5 @@
 import React, { useCallback, useEffect, useState } from "react";
+import 'animate.css';
 import "./ChatApp.css";
 import { RoomItem } from "./components/RoomItem";
 import { useGiphy } from "./hooks/useGiphy";
@@ -18,16 +19,19 @@ export const ChatApp = () => {
     <>
       <div className="container">
         <div className="row">
-          <div className="col-12 col-md-4 chat-rooms">
+          <div className="col-12 col-md-5 chat-rooms">
             {
               loading && <h2 className="alert alert-primary">Loading ...</h2>
             }
             {
-              !loading && collection.length && (collection.map((user, index) => <RoomItem key={index} user={user}/>)) 
+              !loading && collection.length && 
+                (collection.map((user, index) => 
+                    <RoomItem key={index} user={user} index={index} />
+                  )) 
             }
 
           </div>
-          <div className="col-md-8 chat-body d-none d-sm-block">
+          <div className="col-md-7 chat-body d-none d-sm-block">
 
           </div>
         </div>
