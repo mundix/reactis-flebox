@@ -20,7 +20,7 @@ export const useGiphy = () => {
 
   useEffect(()=> {
       getImageFromApi();
-  }, []);
+  }, [getImageFromApi]);
 
   return  images;
 }
