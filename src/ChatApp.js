@@ -4,11 +4,12 @@ import "./ChatApp.css";
 import { RoomItem } from "./components/RoomItem";
 import { useGiphy } from "./hooks/useGiphy";
 import { useFaker } from './hooks/useFaker';
+import { Room } from "./components/Room";
 
 
 export const ChatApp = () => {
-  
-  const {images, loading} = useGiphy();
+
+  const { images, loading } = useGiphy();
   const { collection } = useFaker(images);
   const [room, setRoom] = useState({
     id: null,
@@ -18,8 +19,8 @@ export const ChatApp = () => {
   });
 
   const handleRoomClicked = (uuid) => {
-     const room = collection.find( user => user.id === uuid );
-     setRoom(room);
+    const room = collection.find(user => user.id === uuid);
+    setRoom(room);
   }
 
   // useEffect(() => {
@@ -35,15 +36,17 @@ export const ChatApp = () => {
               loading && <h2 className="alert alert-primary">Loading ...</h2>
             }
             {
-              !loading && collection.length && 
-                (collection.map((user, index) => 
-                    <RoomItem key={index} user={user} index={index} handleRoomClicked={handleRoomClicked}/>
-                  )) 
+              !loading && collection.length &&
+              (collection.map((user, index) =>
+                <RoomItem key={index} user={user} index={index} handleRoomClicked={handleRoomClicked} />
+              ))
             }
 
           </div>
-          <div className="col-md-7 chat-body d-none d-sm-block">
-              <h2>{room?.name}</h2>
+          <div className="col-md-7 chat-body  d-none d-sm-block m-0 p-0 ">
+            {
+              room?.id && <Room room={room}/>
+            }
           </div>
         </div>
       </div>
