@@ -1,8 +1,10 @@
 import React from 'react';
 
-export const RoomItem = ({ user }) => {
+
+export const RoomItem = ({ user, index }) => {
+
    return (
-      <div className="room d-flex align-items-center my-2">
+      <div className={ `room d-flex align-items-center my-2 animate__animated animate__fadeInLeft animate__delay-${index+1}s"` }>
          <div
             className="col-4 col-sm-3 col-md-3"
             style={{
