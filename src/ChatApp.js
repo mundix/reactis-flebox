@@ -5,6 +5,7 @@ import { RoomItem } from "./components/RoomItem";
 import { useGiphy } from "./hooks/useGiphy";
 import { useFaker } from './hooks/useFaker';
 import { Room } from "./components/Room";
+import { GetFakeWorks } from './helpers/GetFakeWorks';
 
 
 export const ChatApp = () => {
@@ -22,6 +23,9 @@ export const ChatApp = () => {
     const room = collection.find(user => user.id === uuid);
     setRoom(room);
   }
+
+  const words = GetFakeWorks(10);
+  console.log(words);
 
   // useEffect(() => {
   //   collection.lenght && console.log("Lllego la coleccion:",collection);
