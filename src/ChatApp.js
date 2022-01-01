@@ -24,9 +24,6 @@ export const ChatApp = () => {
     setRoom(room);
   }
 
-  const words = GetFakeWorks(10);
-  console.log(words);
-
   // useEffect(() => {
   //   collection.lenght && console.log("Lllego la coleccion:",collection);
   // }, [collection])
