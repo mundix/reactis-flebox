@@ -10,9 +10,16 @@ export const ChatApp = () => {
   
   const {images, loading} = useGiphy();
   const { collection } = useFaker(images);
+  const [room, setRoom] = useState({
+    id: null,
+    name: null,
+    image: null,
+    date: null,
+  });
 
   const handleRoomClicked = (uuid) => {
-    console.log( uuid);
+     const room = collection.find( user => user.id === uuid );
+     setRoom(room);
   }
 
   // useEffect(() => {
@@ -36,7 +43,7 @@ export const ChatApp = () => {
 
           </div>
           <div className="col-md-7 chat-body d-none d-sm-block">
-
+              <h2>{room?.name}</h2>
           </div>
         </div>
       </div>
