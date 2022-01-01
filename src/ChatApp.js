@@ -2,17 +2,17 @@ import React, { useCallback, useEffect, useState } from "react";
 import "./ChatApp.css";
 import { RoomItem } from "./components/RoomItem";
 import { useGiphy } from "./hooks/useGiphy";
+import { useFaker } from './hooks/useFaker';
 
 
 export const ChatApp = () => {
   
-  const {images} = useGiphy();
+  const {images, loading} = useGiphy();
+  const { collection } = useFaker(images);
 
-  useEffect(() => {
-    // getImageFromApi();
-    // console.log(images)
-    console.log("Llego papa:", images);
-  }, [images]);
+  // useEffect(() => {
+  //   console.log("Lllego la coleccion:",collection);
+  // }, [collection])
 
   return (
     <>
@@ -20,7 +20,10 @@ export const ChatApp = () => {
         <div className="row">
           <div className="col-12 col-md-4 chat-rooms">
             {
-              images && (images.map(image => <RoomItem image={image}/>)) 
+              loading && <h2 className="alert alert-primary">Loading ...</h2>
+            }
+            {
+              !loading && collection.length && (collection.map((user, index) => <RoomItem key={index} user={user}/>)) 
             }
 
           </div>
