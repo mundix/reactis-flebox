@@ -2,7 +2,7 @@
 
 .chat-rooms , .chat-body{
   
-  min-height: 450px;
+  min-height: 100vh;
 }
 .chat-rooms {
   background-color: gray;
@@ -14,11 +14,15 @@
 
 
 .room {
-  background-color: rgb(126, 216, 204, 0.5);
+  background-color: rgba(100, 161, 153, 0.8);
   border-radius: 3px;
   color: white;
   overflow: hidden;
   height: 100px;
+}
+
+.room:hover {
+  background-color: rgba(100, 161, 153, 0.2);
 }
 
 .room p {
