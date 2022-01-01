@@ -9,6 +9,7 @@ export const useFaker = (images = []) => {
       () => {
          const users = images?.map(image => {
             return {
+               id: faker?.datatype.number(),
                name: faker?.name.findName(),
                image: image,
                date: new Date().toDateString()
