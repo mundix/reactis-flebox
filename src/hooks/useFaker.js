@@ -1,7 +1,7 @@
 import React, { useCallback, useEffect, useState } from 'react';
 import faker from 'faker';
 
-export const useFaker = (images = []) => {
+export const useFaker = (images = null) => {
 
    const [collection, setCollection] = useState([]);
 

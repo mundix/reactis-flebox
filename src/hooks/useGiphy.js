@@ -8,12 +8,17 @@ export const useGiphy =  () => {
    const apiKey = "Nr4bfrgRK7obHM3O68YwvQ2iUmuxi8Yj";
    const url = `https://api.giphy.com/v1/gifs/trending?api_key=${apiKey}&limit=10`;
 
-   const [images, setImages] = useState([]);
+   const [images, setImages] = useState(null);
    const [loading, setLoading] = useState(true);
 
   useEffect(()=> {
-    axios.get(url).then(resp => {
+    axios.get(url)
+    .then(resp => {
       setImages(GetImageFromState(resp?.data.data));
+      setLoading(false);
+    }).catch(err => {
+      console.error(err);
+      setImages(null);
       setLoading(false);
     })
   }, [url]);
