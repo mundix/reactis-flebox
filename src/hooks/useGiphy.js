@@ -19,5 +19,8 @@ export const useGiphy =  () => {
     // setImages();
   }, [data]);
 
-  return  images;
+  return  {
+    images,
+    loading
+  };
 }
