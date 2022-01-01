@@ -6,6 +6,7 @@
 }
 .chat-rooms {
   background-color: gray;
+  cursor: pointer;
 }
 .chat-body {
   background-color: darkcyan;
@@ -43,7 +44,7 @@
 /* Medium devices (tablets, 768px and up) */
 @media (min-width: 768px) { 
   .room p {
-    font-size: 25px;
+    font-size: 20px;
   }
 }
 
