@@ -2,25 +2,25 @@
 import axios from "axios";
 import { useCallback, useEffect, useState } from "react";
 import { GetImageFromState } from '../helpers/GetImageFromState';
+import { useFetch } from "./useFetch";
 
-export const useGiphy = () => {
+export const useGiphy =  () => {
 
    const apiKey = "Nr4bfrgRK7obHM3O68YwvQ2iUmuxi8Yj";
    const url = `https://api.giphy.com/v1/gifs/trending?api_key=${apiKey}&limit=10`;
 
    const [images, setImages] = useState([]);
-
-  const getImageFromApi = useCallback(async () => {
-    await axios.get(url)
-      .then((resp) => {
-         setImages(GetImageFromState(resp.data.data));
-      })
-      .catch( err => console.log(err));
-  }, [url]);
+   const {data, loading, error} = useFetch(url);
 
   useEffect(()=> {
-      getImageFromApi();
-  }, [getImageFromApi]);
+    if(data?.data.length) {
+      setImages(GetImageFromState(data?.data));
+    }
+    // setImages();
+  }, [data]);
 
-  return  images;
+  return  {
+    images,
+    loading
+  };
 }
