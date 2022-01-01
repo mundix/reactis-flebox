@@ -1,10 +1,12 @@
 import React from 'react';
 
 
-export const RoomItem = ({ user, index }) => {
+export const RoomItem = ({ user, index, handleRoomClicked }) => {
 
    return (
-      <div className={ `room d-flex align-items-center my-2 animate__animated animate__fadeInLeft animate__delay-${index+1}s"` }>
+      <div className={ `room d-flex align-items-center my-2 animate__animated animate__fadeInLeft animate__delay-${index+1}s"` }
+         onClick={()=>{handleRoomClicked(user?.id)}}
+      >
          <div
             className="col-4 col-sm-3 col-md-3"
             style={{
