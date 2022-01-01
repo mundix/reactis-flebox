@@ -1,21 +1,61 @@
 /* @import '~@fortawesome/fontawesome-free/scss/fontawesome'; */
 
-.chat-rooms {
-  background-color: gray;
+.chat-rooms , .chat-body{
+  
   min-height: 450px;
 }
+.chat-rooms {
+  background-color: gray;
+}
+.chat-body {
+  background-color: darkcyan;
+}
+
 
 .room {
   background-color: rgb(126, 216, 204, 0.5);
-  border-radius: 5px;
+  border-radius: 3px;
   color: white;
+  overflow: hidden;
+  height: 100px;
 }
 
 .room p {
   font-size: 12px;
   line-height: 1em;
 }
+
 .room small {
   font-size: 10px;
   font-style: italic;
 }
+
+/* Small devices (landscape phones, 576px and up) */
+@media (max-width: 576px) { 
+    .room p {
+      font-size: 20px;
+    }
+    .room small {
+      font-size: 16px;
+    }
+}
+
+/* Medium devices (tablets, 768px and up) */
+@media (min-width: 768px) { 
+  .room p {
+    font-size: 25px;
+  }
+}
+
+/* Large devices (desktops, 992px and up) */
+@media (min-width: 992px) { 
+
+ }
+
+/* X-Large devices (large desktops, 1200px and up) */
+@media (min-width: 1200px) { 
+
+ }
+
+/* XX-Large devices (larger desktops, 1400px and up) */
+@media (min-width: 1400px) {  }
