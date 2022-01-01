@@ -24,7 +24,7 @@ export const ChatApp = () => {
   }
 
   // useEffect(() => {
-  //   console.log("Lllego la coleccion:",collection);
+  //   collection.lenght && console.log("Lllego la coleccion:",collection);
   // }, [collection])
 
   return (
