@@ -23,9 +23,9 @@ export const RoomItem = ({ user, index, handleRoomClicked }) => {
                <small clas>{user.date}</small>
             </div>
             <div className="justify-content-center align-items-center mx-2">
-               <span className="badge rounded-pill bg-primary ">
+               <span className="badge rounded-pill bg-danger ">
                   99
-                  <i className="bi bi-bar-chart" style={{ fontSize: 10 }}></i>
+                  {/* <i className="bi bi-bar-chart" style={{ fontSize: 10 }}></i> */}
                </span>
             </div>
          </div>
